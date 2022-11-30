@@ -11,3 +11,5 @@ try {
 } catch (\Throwable $th) {
     echo '{"codigo": 400, "mensaje": "ERROR, NO SE PUEDE ESTABLECER LA CONEXION", "respuesta": ""}';
 }
+
+include 'footer.php';

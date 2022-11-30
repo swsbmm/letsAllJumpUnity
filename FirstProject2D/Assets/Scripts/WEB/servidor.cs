@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 
-[CreateAssetMenu(fileName = "Servidor", menuName = "HegetServidor", order=1)]
+[CreateAssetMenu(fileName = "Servidor", menuName = "HegetServidor", order = 1)]
 public class Servidor : ScriptableObject
 {
     public string servidor;
@@ -12,32 +12,44 @@ public class Servidor : ScriptableObject
     public Respuesta respuesta;
 
     public bool ocupado = false;
-    public 
-
 
     public IEnumerator ConsumirServicio(string nombre, string[] datos)
     {
+        Debug.Log("HOLAa");
         ocupado = true;
         WWWForm formulario = new WWWForm();
-        Servicio s;
-        for(int = 0; int<servicios.Length; int++)
+        Servicio s = new Servicio();
+        for (int i = 0; i < servicios.Length; i++)
         {
-            if (servicios[i].Equals(nombre))
+            if (servicios[i].nombre.Equals(nombre))
             {
                 s = servicios[i];
             }
         }
 
-        for(int=0; int< s.parametros; int++)
+        for (int i = 0; i < s.parametros.Length; i++)
         {
             formulario.AddField(s.parametros[i], datos[i]);
         }
 
-        UnityWebRequest WWW = UnityWebRequest.Post(servidor.url)
+        UnityWebRequest www = UnityWebRequest.Post(servidor + "/" + s.url, formulario);
+        Debug.Log(servidor + "/" + s.url);
+        yield return www.SendWebRequest();
 
+        if (www.result != UnityWebRequest.Result.Success)
+        {
+            respuesta = new Respuesta();
+        }
+        else
+        {
+            Debug.Log(www.downloadHandler.text);
+            respuesta = JsonUtility.FromJson<Respuesta>(www.downloadHandler.text);
+        }
+        ocupado = false;
     }
 
 }
+
 [System.Serializable]
 public class Servicio
 {
@@ -51,4 +63,10 @@ public class Respuesta
 {
     public int codigo;
     public string mensaje;
+
+    public Respuesta()
+    {
+        codigo = 404;
+        mensaje = "error";
+    }
 }

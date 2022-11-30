@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class get_puntajes : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Servidor servidor;
+    
+
+    public void get()
     {
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        string[] datos = new string[0];
+        StartCoroutine(servidor.ConsumirServicio("puntajes", datos));
         
     }
 }

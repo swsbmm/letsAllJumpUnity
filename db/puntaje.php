@@ -7,11 +7,11 @@ try {
         echo '{"codigo": 400, "mensaje": "CONEXION FALLO", "respuesta": ""}';
     } else {
 
-        if (isset($_GET['nickname']) && isset($_GET['score']) && isset($_GET['date'])) {
-            $nick_name = $_GET['nickname'];
-            $score = $_GET['score'];
-            $date = $_GET['date'];
-            $sql = "INSERT INTO `Puntaje` (`idPuntaje`, `nick_name`, `score`, `date`) VALUES (NULL, '" . $nick_name . "', '" . $score . "', '" . $date . "');";
+        if (isset($_POST['nickname']) && isset($_POST['score']) && isset($_POST['date'])) {
+            $nick_name = $_POST['nickname'];
+            $score = $_POST['score'];
+            $date = $_POST['date'];
+            $sql = "INSERT INTO `Puntaje` (`id`, `nick_name`, `score`, `date`) VALUES (NULL, '" . $nick_name . "', '" . $score . "', '" . $date . "');";
             if ($conn->query($sql) === TRUE) {
                 echo '{"codigo": 201, "mensaje": "Puntaje registrado con exito", "respuesta": ""}';
             } else {
@@ -27,3 +27,5 @@ try {
 } catch (\Throwable $th) {
     echo '{"codigo": 400, "mensaje": "ERROR, NO SE PUEDE ESTABLECER LA CONEXION", "respuesta": ""}';
 }
+
+include 'footer.php';
