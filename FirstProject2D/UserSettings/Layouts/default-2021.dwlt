@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 91
+  controlID: 42
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 454
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 22
+  controlID: 47
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 23
+  controlID: 48
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -411,22 +411,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Documentos\Mateo\proyectos\letsAllJumpUnity\FirstProject2D
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 64650000
-    m_LastClickedID: 25956
-    m_ExpandedIDs: 00000000d0640000d2640000d4640000d6640000d8640000da640000dc64000000ca9a3b
+    m_SelectedIDs: 6eb90000
+    m_LastClickedID: 47470
+    m_ExpandedIDs: 0000000062b9000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -454,7 +454,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d0640000d2640000d4640000d6640000d8640000da640000dc640000de640000
+    m_ExpandedIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -581,10 +581,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 57}
+      scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: ecf8ffff8cfafffff065000044660000
+      m_ExpandedIDs: 7810ffffbe10ffff9c13ffff3414ffff3e14ffff4a14ffffda17ffff2218ffff041bffffa01bffffae1bffffbe1bffffdc1cffff2222ffffd622ffff7423ffff7c24ffff7425ffff3c26ffff0e27ffffa22affffe82affffc62dffff5e2effff6e2effff722effffd830ffff1e31fffffc33ffff9434ffffa434ffffa834ffff924bffffd84bffffb84effff504fffff604fffff644fffff5056ffff9656ffff7659ffff0e5affff1e5affff225affff5669ffff9e69ffffd469ffff5e6affff6a6affff6e6affff6e6bffffb46bffffea6bffff746cffff806cffff586dffff9e6dffff7e70ffff1671ffff2671ffff1c77ffff5a88ffffd48ffffffca0ffff70a1ffffb8a1ffffdea1ffff1ca2ffff80a3ffff60a6ffff9ea7ffffb2df0000c6df00002ae00000aae7000014ee00001eee000028ee000032ee00006aee00008cee000096ee0000b0ee0000b40001005801010064040100380501004407010062070100c0070100ca0901003e0a0100480a0100520a0100640a0100c80a0100ea0a0100160b0100560d0100740d01005617010074170100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -855,9 +855,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.7575427, y: 0.71706575, z: -0.0007272465}
+    m_Target: {x: 1980.964, y: 1084.0071, z: -25.600306}
     speed: 2
-    m_Value: {x: 1.7575427, y: 0.71706575, z: -0.0007272465}
+    m_Value: {x: 1980.964, y: 1084.0071, z: -25.600306}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -908,9 +908,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 8.245463
+    m_Target: 1317.0972
     speed: 2
-    m_Value: 8.245463
+    m_Value: 1317.0972
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -996,7 +996,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
