@@ -20,6 +20,7 @@ public class GestorPhoton : MonoBehaviourPunCallbacks
 
     string RoomName = "place holder";
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,9 +48,10 @@ public class GestorPhoton : MonoBehaviourPunCallbacks
 
     public override void OnPlayerEnteredRoom( Player newPlayer){
         print(newPlayer.NickName + "Has joined");
-
+        
         if(PhotonNetwork.IsMasterClient && PhotonNetwork.CurrentRoom.PlayerCount >=2){
             PhotonNetwork.LoadLevel(2);
+            PhotonNetwork.Instantiate("Kevin", new Vector2(-7,-2.6f), Quaternion.identity);
         }
     }
 
@@ -68,12 +70,19 @@ public class GestorPhoton : MonoBehaviourPunCallbacks
     }
 
     public void CreateRoom(){
-        PhotonNetwork.CreateRoom(RoomName, new RoomOptions() {MaxPlayers = 2}, null );
+        PhotonNetwork.CreateRoom(RoomName, new RoomOptions() {MaxPlayers = 2}, TypedLobby.Default );
     }
 
     public override void OnJoinedRoom(){
         print("Joined room");
-        //PhotonNetwork.Instantiate("Ryan", new Vector2(-7,-2.6f), Quaternion.identity);
+        PhotonNetwork.Instantiate("Ryan", new Vector2(-5,-2.6f), Quaternion.identity);
+        /*if (PhotonNetwork.isMasterClient)
+        {    
+        }
+        else
+        {   
+        }*/
+        
     }
 
     public void GetRoomList(){
