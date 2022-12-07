@@ -15,7 +15,6 @@ public class Servidor : ScriptableObject
 
     public IEnumerator ConsumirServicio(string nombre, string[] datos)
     {
-        Debug.Log("HOLAa");
         ocupado = true;
         WWWForm formulario = new WWWForm();
         Servicio s = new Servicio();
