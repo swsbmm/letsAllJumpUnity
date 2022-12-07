@@ -52,8 +52,7 @@ public class GestorPhoton : MonoBehaviourPunCallbacks
         print(newPlayer.NickName + "Has joined");
         
         if(PhotonNetwork.IsMasterClient && PhotonNetwork.CurrentRoom.PlayerCount >=2){
-            PhotonNetwork.LoadLevel(2);
-            
+            PhotonNetwork.LoadLevel(2);    
         }
     }
 
@@ -159,6 +158,18 @@ public class GestorPhoton : MonoBehaviourPunCallbacks
                     else
                     {   
                         PhotonNetwork.Instantiate("Kevin", new Vector2(-5,-2.6f), Quaternion.identity); 
+                    }
+                break;
+            case 3:
+                if (PhotonNetwork.IsMasterClient)
+                    {   
+                        print("PERO SI LOS INSTANCIA O QUÉ");
+                        PhotonNetwork.Instantiate("Ryan", new Vector2(-14.5f,-3.2f), Quaternion.identity); 
+                    }
+                    else
+                    {   
+                        print("PERO SI LOS INSTANCIA O QUÉ 2");
+                        PhotonNetwork.Instantiate("Kevin", new Vector2(-13.0f,-3.2f), Quaternion.identity); 
                     }
                 break;
             default:
