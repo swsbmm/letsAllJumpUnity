@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class CollidableObject : MonoBehaviour
 {
-    private Collider2D z_Collider;
+    protected Collider2D z_Collider;
     [SerializeField]
-    private ContactFilter2D z_Filter;
-    private List<Collider2D> z_CollidedObjects = new List<Collider2D>(1);
+    protected ContactFilter2D z_Filter;
+    protected List<Collider2D> z_CollidedObjects = new List<Collider2D>(1);
 
     protected virtual void Start(){
         z_Collider = GetComponent<Collider2D>();

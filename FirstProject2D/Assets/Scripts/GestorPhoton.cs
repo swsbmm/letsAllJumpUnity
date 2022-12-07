@@ -26,11 +26,13 @@ public class GestorPhoton : MonoBehaviourPunCallbacks
     {
         if(!PhotonNetwork.IsConnected){
             PhotonNetwork.AutomaticallySyncScene = true;
+            PhotonNetwork.SendRate = 20;
+            PhotonNetwork.SerializationRate = 10;
             PhotonNetwork.ConnectUsingSettings();
         }
 
         string DefaultName = "";
-        //InputField NameInputField = GetComponent<InputField>();
+ 
         if(NameInputField != null){
             if(PlayerPrefs.HasKey(PlayerNamePrefKey)){
                 DefaultName = PlayerPrefs.GetString(PlayerNamePrefKey);
@@ -51,7 +53,7 @@ public class GestorPhoton : MonoBehaviourPunCallbacks
         
         if(PhotonNetwork.IsMasterClient && PhotonNetwork.CurrentRoom.PlayerCount >=2){
             PhotonNetwork.LoadLevel(2);
-            PhotonNetwork.Instantiate("Kevin", new Vector2(-7,-2.6f), Quaternion.identity);
+            
         }
     }
 
@@ -59,10 +61,6 @@ public class GestorPhoton : MonoBehaviourPunCallbacks
         print("connected to master");
         PhotonNetwork.JoinLobby();
     }
-
-    //public override void OnJoinedLobby(){
-    //    PhotonNetwork.JoinOrCreateRoom("Cuarto", new RoomOptions { MaxPlayers = 2}, TypedLobby.Default);
-    //}
 
     public override void OnJoinedLobby(){
         //PhotonNetwork.JoinLobby(customLobby);
@@ -75,13 +73,6 @@ public class GestorPhoton : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom(){
         print("Joined room");
-        PhotonNetwork.Instantiate("Ryan", new Vector2(-5,-2.6f), Quaternion.identity);
-        /*if (PhotonNetwork.isMasterClient)
-        {    
-        }
-        else
-        {   
-        }*/
         
     }
 
@@ -151,5 +142,29 @@ public class GestorPhoton : MonoBehaviourPunCallbacks
 
     public void SetRoomName(string value){
         RoomName = value;
+    }
+
+    void OnLevelWasLoaded(int level)
+    {
+
+        switch(level) 
+            {
+            case 1:
+                break;
+            case 2:
+                if (PhotonNetwork.IsMasterClient)
+                    {   
+                        PhotonNetwork.Instantiate("Ryan", new Vector2(-5,-2.6f), Quaternion.identity); 
+                    }
+                    else
+                    {   
+                        PhotonNetwork.Instantiate("Kevin", new Vector2(-5,-2.6f), Quaternion.identity); 
+                    }
+                break;
+            default:
+                // code block
+                break;
+            }
+        
     }
 }
