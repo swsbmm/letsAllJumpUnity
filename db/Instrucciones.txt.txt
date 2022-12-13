@@ -1,0 +1,1 @@
+PEGAR ESTA CARPETA DENTRO DEL SERVIODR APACHE C:\xampp\htdocs o en el lugar que usted haya hecho la instalacion de .\xamp\htdocs
