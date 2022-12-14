@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level3.unity
     guid: 9abd4d42cc9e5b243a5cee1c923814a9
   - enabled: 1
+    path: Assets/Scenes/Level4.unity
+    guid: ebd6f4cb186d9f742aa0fe91827c0b9d
+  - enabled: 1
     path: Assets/Scenes/Perdedores.unity
     guid: 4e872f78a7902a44abc6498ac3bbd675
   - enabled: 1

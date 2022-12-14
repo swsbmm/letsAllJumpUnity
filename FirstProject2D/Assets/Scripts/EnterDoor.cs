@@ -21,7 +21,7 @@ public class EnterDoor : MonoBehaviour
         }
         else if (collision.GetComponent<BrownDoor>())
         {
-            sceneToLoad = 2;
+            sceneToLoad = 4;
             enterAllowed = true;
         }
         else if (collision.GetComponent<Muerte>())

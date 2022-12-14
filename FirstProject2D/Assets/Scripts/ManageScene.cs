@@ -42,7 +42,7 @@ public class ManageScene : MonoBehaviour
                     }
                 break;
             case "Level3":
-                print("level 6 is loaded");
+                print("level 3 is loaded");
                 if (PhotonNetwork.IsMasterClient)
                     {   
                         PhotonNetwork.Instantiate("Ryan", new Vector2(-13.0f,-3.2f), Quaternion.identity); 
@@ -52,6 +52,17 @@ public class ManageScene : MonoBehaviour
                         PhotonNetwork.Instantiate("Kevin", new Vector2(16.28f,-3.2f), Quaternion.identity); 
                     }
                 break;
+            case "Level4":
+                print("level 4 is loaded");
+                if (PhotonNetwork.IsMasterClient)
+                    {   
+                        PhotonNetwork.Instantiate("Ryan", new Vector2(-8.31f,-5.38f), Quaternion.identity); 
+                    }
+                    else
+                    {   
+                        PhotonNetwork.Instantiate("Kevin", new Vector2(-11.5f,-5.29f), Quaternion.identity); 
+                    }
+                break;    
             default:
                 // code block
                 break;
