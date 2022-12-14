@@ -27,7 +27,7 @@ public class EnterDoor : MonoBehaviour
         else if (collision.GetComponent<Muerte>())
         {
             muerte = true;
-            sceneToLoad = 4;
+            sceneToLoad = 5;
         }
     }
 
@@ -47,9 +47,7 @@ public class EnterDoor : MonoBehaviour
             if(PhotonNetwork.IsMasterClient){
                 PhotonNetwork.LoadLevel(sceneToLoad);    
             }
-        }
-        
-        if(muerte){
+        } else if(muerte){
             if(PhotonNetwork.IsMasterClient){
                 PhotonNetwork.LoadLevel(sceneToLoad);  
                 muerte = false;  
