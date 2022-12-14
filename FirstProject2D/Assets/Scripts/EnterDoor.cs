@@ -9,6 +9,8 @@ public class EnterDoor : MonoBehaviour
 {
     private bool enterAllowed;
     private int sceneToLoad;
+    private bool muerte = false;
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,8 +21,13 @@ public class EnterDoor : MonoBehaviour
         }
         else if (collision.GetComponent<BrownDoor>())
         {
-            sceneToLoad = 4;
+            sceneToLoad = 2;
             enterAllowed = true;
+        }
+        else if (collision.GetComponent<Muerte>())
+        {
+            muerte = true;
+            sceneToLoad = 4;
         }
     }
 
@@ -30,24 +37,24 @@ public class EnterDoor : MonoBehaviour
         {
             enterAllowed = false;
         }
+
     }
 
     private void Update()
     {
         if (enterAllowed && Input.GetKeyDown(KeyCode.Return))
         {
-            //loadNextLevel(sceneToLoad);
             if(PhotonNetwork.IsMasterClient){
                 PhotonNetwork.LoadLevel(sceneToLoad);    
-                //placePlayers(sceneToLoad);
+            }
+        }
+        
+        if(muerte){
+            if(PhotonNetwork.IsMasterClient){
+                PhotonNetwork.LoadLevel(sceneToLoad);  
+                muerte = false;  
             }
         }
     }
-
-
-    private void loadNextLevel(int level){
-        PhotonNetwork.LoadLevel(level);
-    }
-
 
 }

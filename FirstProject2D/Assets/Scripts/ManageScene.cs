@@ -45,13 +45,11 @@ public class ManageScene : MonoBehaviour
                 print("level 6 is loaded");
                 if (PhotonNetwork.IsMasterClient)
                     {   
-                        print("PERO SI LOS INSTANCIA O QUÉ");
-                        PhotonNetwork.Instantiate("Ryan", new Vector2(16.28f,-3.2f), Quaternion.identity); 
+                        PhotonNetwork.Instantiate("Ryan", new Vector2(-13.0f,-3.2f), Quaternion.identity); 
                     }
                     else
                     {   
-                        print("PERO SI LOS INSTANCIA O QUÉ 2");
-                        PhotonNetwork.Instantiate("Kevin", new Vector2(-13.0f,-3.2f), Quaternion.identity); 
+                        PhotonNetwork.Instantiate("Kevin", new Vector2(16.28f,-3.2f), Quaternion.identity); 
                     }
                 break;
             default:
