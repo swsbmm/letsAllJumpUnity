@@ -46,7 +46,7 @@ public class ManageScene : MonoBehaviour
                 if (PhotonNetwork.IsMasterClient)
                     {   
                         print("PERO SI LOS INSTANCIA O QUÉ");
-                        PhotonNetwork.Instantiate("Ryan", new Vector2(-14.5f,-3.2f), Quaternion.identity); 
+                        PhotonNetwork.Instantiate("Ryan", new Vector2(16.28f,-3.2f), Quaternion.identity); 
                     }
                     else
                     {   

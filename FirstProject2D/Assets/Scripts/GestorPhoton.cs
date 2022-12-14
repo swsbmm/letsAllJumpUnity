@@ -11,6 +11,12 @@ public class GestorPhoton : MonoBehaviourPunCallbacks
 {
     public GameObject[] EntryButtons;
 
+    public GameObject Menu1;
+
+    public GameObject MenuSalas;
+
+    public GameObject textCargando; 
+
     private TypedLobby customLobby = new TypedLobby("customLobby", LobbyType.Default);
 
     private Dictionary<string, RoomInfo> cachedRoomList = new Dictionary<string, RoomInfo>();
@@ -65,6 +71,9 @@ public class GestorPhoton : MonoBehaviourPunCallbacks
     public override void OnJoinedLobby(){
         //PhotonNetwork.JoinLobby(customLobby);
         print("connected to Lobby");
+        Menu1.SetActive(true);
+        textCargando.SetActive(false);
+        
     }
 
     public void CreateRoom(){
@@ -77,6 +86,8 @@ public class GestorPhoton : MonoBehaviourPunCallbacks
     }
 
     public void GetRoomList(){
+        Menu1.SetActive(false);
+        MenuSalas.SetActive(true);
         print("tamaño"+ cachedRoomList.Count);
         RoomInfo[] RoomList = new RoomInfo[cachedRoomList.Count];
         int Position = 0;
@@ -91,6 +102,7 @@ public class GestorPhoton : MonoBehaviourPunCallbacks
             for(int Index = 0; Index < RoomList.Length; ++Index){
                 RoomInfo Room = RoomList[Index];
                 GameObject Entry = EntryButtons[Index];
+                Entry.SetActive(true);
                 Text EntryText = Entry.GetComponentInChildren<Text>();
                 EntryText.text = Room.Name;
             }
